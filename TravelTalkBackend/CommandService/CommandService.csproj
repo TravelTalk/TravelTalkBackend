@@ -14,5 +14,9 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ConstantContent\ConstantContent.csproj" />
+    <ProjectReference Include="..\CQRS\Commands\Commands.csproj">
+      <Project>{601243B2-2154-4B9D-B68E-BE97279448B6}</Project>
+      <Name>Commands</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

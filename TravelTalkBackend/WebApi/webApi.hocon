@@ -9,7 +9,7 @@ akka {
 		  user/commandHandlerRouter {
 			  router = round-robin-group # routing strategy
 			  nr-of-instances = 10 # max number of total routees
-			  routees.paths = ["/user/commands"]
+			  routees.paths = ["/user/commandHandlers"]
 			  cluster {
 					enabled = on
 					allow-local-routees = on

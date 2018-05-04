@@ -3,10 +3,10 @@ akka {
 		provider = cluster
 		
 		deployment {
-		#  user/commands {
-		#	  router = round-robin-pool # routing strategy
-		#	  nr-of-instances = 5 # max number of total routees
-		#  }
+		    user/commandHandlers {
+			    router = round-robin-pool # routing strategy
+		        nr-of-instances = 5 # max number of total routees
+		    }
 		}
 
 		serializers {

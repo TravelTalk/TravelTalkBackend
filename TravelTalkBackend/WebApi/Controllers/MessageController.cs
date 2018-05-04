@@ -4,7 +4,7 @@
     using Microsoft.AspNetCore.Mvc;
     using Model.Message;
 
-    public class MessageController : ApiBaseController {
+    public class MessageController : AbstractApiController {
 
         public MessageController(ActorSystem actorSystem) : base(actorSystem) { }
 

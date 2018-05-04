@@ -1,17 +1,16 @@
-﻿namespace Commands.GeneralCommandHandling {
+﻿namespace Commands.CommandHandler {
     using System;
     using Akka.Actor;
     using GeneralCommandEvents;
 
     internal sealed class CommandWorkerActor<TCommand, TCommandResult> : ReceiveActor
-            where TCommand : ICommand<TCommandResult>
+            where TCommand : ICommand
             where TCommandResult : ICommandResult {
+        
         private TCommand command;
-
         private IActorRef commandSender;
 
         public CommandWorkerActor() {
-
             Receive<CommandWorkerJob>(x => {
                 commandSender = Sender;
                 command = x.Command;
@@ -28,7 +27,7 @@
                 Self.Tell(PoisonPill.Instance);
             });
 
-            Receive<CommandNotSuccessful>(x => {
+            Receive<CommandNotSuccessfulResult>(x => {
                 commandSender.Tell(CommandHandled<TCommand, TCommandResult>.CreateUnsuccessfulResult(command, x.CommandStatus));
                 Self.Tell(PoisonPill.Instance);
             });

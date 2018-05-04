@@ -1,4 +1,4 @@
-﻿namespace ConstantContent {
+﻿namespace TravelTalk.ConstantContent {
     
     public class ResourceFileNames {
 

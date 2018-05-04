@@ -1,4 +1,4 @@
-﻿namespace Feitzinger.TyrolSky.Utility.InitializationHelper.Logging {
+﻿namespace TravelTalk.ConstantContent {
     using Serilog;
     using Serilog.Core;
 

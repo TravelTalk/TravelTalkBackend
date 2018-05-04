@@ -4,7 +4,7 @@
     using Model.Tracking;
 
     [Route("api/[controller]")]
-    public class TrackingController : ApiBaseController {
+    public class TrackingController : AbstractApiController {
 
         public TrackingController(ActorSystem actorSystem) : base(actorSystem) { }
 

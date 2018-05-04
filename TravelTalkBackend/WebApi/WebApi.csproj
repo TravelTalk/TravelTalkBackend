@@ -5,19 +5,23 @@
     <RootNamespace>TravelTalk.WebApi</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-      <PackageReference Include="Akka" Version="1.3.6"/>
-      <PackageReference Include="Akka.Cluster" Version="1.3.6"/>
-      <PackageReference Include="Akka.Logger.Serilog" Version="1.3.6"/>
-      <PackageReference Include="Enumeration.dll" Version="2.0.3"/>
-      <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
-      <PackageReference Include="Serilog.Sinks.ColoredConsole" Version="3.0.1"/>
+    <PackageReference Include="Akka" Version="1.3.6" />
+    <PackageReference Include="Akka.Cluster" Version="1.3.6" />
+    <PackageReference Include="Akka.Logger.Serilog" Version="1.3.6" />
+    <PackageReference Include="Enumeration.dll" Version="2.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
+    <PackageReference Include="Serilog.Sinks.ColoredConsole" Version="3.0.1" />
     <PackageReference Include="Serilog.Sinks.Seq" Version="4.0.1-dev-00154" />
   </ItemGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.3" />
   </ItemGroup>
-    <ItemGroup>
-        <ProjectReference Include="..\ConstantContent\ConstantContent.csproj"/>
-        <ProjectReference Include="..\CQRS\Commands\Commands.csproj"/>
-    </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ActorUtility\ActorUtility.csproj">
+      <Project>{E2B9FD1B-9AE3-41D8-9C2B-4C11EE0D0F93}</Project>
+      <Name>ActorUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ConstantContent\ConstantContent.csproj" />
+    <ProjectReference Include="..\CQRS\Commands\Commands.csproj" />
+  </ItemGroup>
 </Project>

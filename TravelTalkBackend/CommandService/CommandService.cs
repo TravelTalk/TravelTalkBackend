@@ -3,8 +3,9 @@
     using System.Threading.Tasks;
     using Akka.Actor;
     using Akka.Configuration;
+    using Akka.Routing;
+    using Commands.CommandHandler;
     using ConstantContent;
-    using Feitzinger.TyrolSky.Utility.InitializationHelper.Logging;
 
     public class CommandService {
 
@@ -14,6 +15,9 @@
 
         public void Start() {
             actorSystem = LaunchActorSystem();
+
+            actorSystem.ActorOf(Props.Create<CommandHandlerActor>().WithRouter(FromConfig.Instance), 
+                    ActorConstants.COMMAND_HANDLER_POOL_ROUTER_NAME);
 
             //todo start root actors
         }

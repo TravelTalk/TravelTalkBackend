@@ -3,9 +3,8 @@
     using Akka.Actor;
     using Akka.Configuration;
     using Akka.Routing;
-    using Commands.GeneralCommandHandling;
+    using Commands.CommandHandler;
     using ConstantContent;
-    using Feitzinger.TyrolSky.Utility.InitializationHelper.Logging;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.Configuration;
