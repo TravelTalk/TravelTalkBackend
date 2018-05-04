@@ -1,4 +1,4 @@
-﻿namespace CommandService {
+﻿namespace TravelTalk.CommandService {
     using System.IO;
     using System.Threading.Tasks;
     using Akka.Actor;
@@ -6,31 +6,28 @@
     using ConstantContent;
     using Feitzinger.TyrolSky.Utility.InitializationHelper.Logging;
 
-    public class DomainHostingService {
+    public class CommandService {
 
-        private ActorSystem tyrolSkyActorSystem;
+        private ActorSystem actorSystem;
 
-        public Task TerminationHandle => tyrolSkyActorSystem.WhenTerminated;
+        public Task TerminationHandle => actorSystem.WhenTerminated;
 
         public void Start() {
-            tyrolSkyActorSystem = DomainHostingServiceHostFactory.LaunchDomainService();
+            actorSystem = LaunchActorSystem();
 
             //todo start root actors
         }
 
-        public async Task StopAsync() {
-            await CoordinatedShutdown.Get(tyrolSkyActorSystem).Run();
+        public async Task CoordinatedShutdown() {
+            await Akka.Actor.CoordinatedShutdown.Get(actorSystem).Run();
         }
 
-        public static class DomainHostingServiceHostFactory {
-            public static ActorSystem LaunchDomainService() {
-                LoggerInitialization.InitLogger();
+        private static ActorSystem LaunchActorSystem() {
+            LoggerInitialization.InitLogger();
+            Config clusterConfig = ConfigurationFactory.ParseString(
+                    File.ReadAllText(ResourceFileNames.COMMAND_SERVICE_CONFIG_FILE));
 
-                string configString = File.ReadAllText(ResourceFileNames.COMMAND_SERVICE_CONFIG_FILE);
-                Config clusterConfig = ConfigurationFactory.ParseString(configString);
-
-                return ActorSystem.Create(ActorSystemValues.ACTOR_SYSTEM_NAME, clusterConfig);
-            }
+            return ActorSystem.Create(ActorSystemValues.ACTOR_SYSTEM_NAME, clusterConfig);
         }
     }
 }

@@ -11,7 +11,9 @@ using Microsoft.Extensions.Options;
 
 
 namespace WebApi {
+
     public class Startup {
+
         public Startup(IConfiguration configuration) {
             Configuration = configuration;
         }

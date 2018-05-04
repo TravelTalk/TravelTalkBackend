@@ -1,17 +1,16 @@
-﻿using System;
+﻿namespace TravelTalk.CommandService {
+    using System;
 
-
-namespace CommandService {
     class Program {
+        
         static void Main(string[] args) {
             Console.WriteLine("Hello Command Service!");
             
-            
-            DomainHostingService domainHostingService = new DomainHostingService();
-            domainHostingService.Start();
+            CommandService commandService = new CommandService();
+            commandService.Start();
 
-            Console.CancelKeyPress += (sender, eventArgs) => domainHostingService.StopAsync().GetAwaiter().GetResult();
-            domainHostingService.TerminationHandle.Wait();
+            Console.CancelKeyPress += (sender, eventArgs) => commandService.CoordinatedShutdown().GetAwaiter().GetResult();
+            commandService.TerminationHandle.Wait();
         }
     }
 }
