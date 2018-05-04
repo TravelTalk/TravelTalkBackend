@@ -15,4 +15,7 @@
     <Folder Include="User\Commands" />
     <Folder Include="User\Events" />
   </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\ActorUtility\ActorUtility.csproj"/>
+    </ItemGroup>
 </Project>
