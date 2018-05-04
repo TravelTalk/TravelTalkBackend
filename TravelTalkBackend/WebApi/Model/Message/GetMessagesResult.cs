@@ -1,4 +1,4 @@
-﻿namespace WebApi.Model.Message {
+﻿namespace TravelTalk.WebApi.Model.Message {
     using System.Collections.Generic;
 
     public sealed class GetMessagesResult {
@@ -11,7 +11,7 @@
     public sealed class MessageRemoteDto : IRemoteDto {
 
         public string Id { get; set; }
-        
+
         public string SenderId { get; set; }
 
         public string MessageText { get; set; }

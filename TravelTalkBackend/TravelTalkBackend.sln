@@ -6,6 +6,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandService", "CommandSe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConstantContent", "ConstantContent\ConstantContent.csproj", "{8FE810EC-2B77-4F5D-B238-7BA14863E121}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CQRS", "CQRS", "{631F601B-DE72-4189-83F1-B0DE72834F48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commands", "CQRS\Commands\Commands.csproj", "{601243B2-2154-4B9D-B68E-BE97279448B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +28,12 @@ Global
 		{8FE810EC-2B77-4F5D-B238-7BA14863E121}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FE810EC-2B77-4F5D-B238-7BA14863E121}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FE810EC-2B77-4F5D-B238-7BA14863E121}.Release|Any CPU.Build.0 = Release|Any CPU
+		{601243B2-2154-4B9D-B68E-BE97279448B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{601243B2-2154-4B9D-B68E-BE97279448B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{601243B2-2154-4B9D-B68E-BE97279448B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{601243B2-2154-4B9D-B68E-BE97279448B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{601243B2-2154-4B9D-B68E-BE97279448B6} = {631F601B-DE72-4189-83F1-B0DE72834F48}
 	EndGlobalSection
 EndGlobal
