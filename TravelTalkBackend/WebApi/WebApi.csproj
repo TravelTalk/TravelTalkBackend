@@ -6,6 +6,7 @@
     <Folder Include="wwwroot\" />
   </ItemGroup>
   <ItemGroup>
+      <PackageReference Include="Enumeration.dll" Version="2.0.3"/>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
       <PackageReference Include="Serilog.Sinks.Seq" Version="4.0.1-dev-00154"/>
   </ItemGroup>
