@@ -1,11 +1,18 @@
 ﻿namespace TravelTalk.CommandService.SetLocation {
-    
-    public sealed class SetLocationCommand {
+    using Commands.CommandHandler;
+
+    public sealed class SetLocationCommand : ICommand<EmptyCommandResult> {
+
+        public SetLocationCommand(string userId, double longitude, double latitude) {
+            UserId = userId;
+            Longitude = longitude;
+            Latitude = latitude;
+        }
+
+        public string UserId { get;  }
         
-        public string UserId { get; set; }
+        public double Longitude { get;  }
         
-        public double Longitude { get; set; }
-        
-        public double Latitude { get; set; }
+        public double Latitude { get;  }
     }
 }

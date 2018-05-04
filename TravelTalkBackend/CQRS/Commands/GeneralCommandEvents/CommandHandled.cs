@@ -2,7 +2,7 @@
     using CommandHandler;
 
     public sealed class CommandHandled<TCommand, TCommandResult>
-            where TCommand : ICommand
+            where TCommand : ICommand<TCommandResult>
             where TCommandResult : ICommandResult {
 
         private CommandHandled(TCommand command, TCommandResult result, CommandResultStatus resultStatus, string commandProcessingMessage) {
