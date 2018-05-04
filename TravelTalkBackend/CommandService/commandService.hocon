@@ -1,0 +1,38 @@
+
+akka { 
+	actor {
+		provider = cluster
+		
+		deployment {
+		#  user/commands {
+		#	  router = round-robin-pool # routing strategy
+		#	  nr-of-instances = 5 # max number of total routees
+		#  }
+		}
+
+		serializers {
+			hyperion = "Akka.Serialization.HyperionSerializer, Akka.Serialization.Hyperion"
+		}
+		serialization-bindings {
+			"System.Object" = hyperion
+		}
+	}
+
+	remote {
+		dot-netty.tcp {
+			port = 0
+			hostname = localhost
+		}
+	}
+	
+	cluster {
+		roles = ["commandService"] # roles this member is in
+		seed-nodes = ["akka.tcp://TravelTalk@localhost:4053"]
+		auto-down-unreachable-after  = 5s  #only during debuging!
+	}					
+
+	loglevel=DEBUG,   
+	loggers=["Akka.Logger.Serilog.SerilogLogger, Akka.Logger.Serilog"] 
+
+	
+}
