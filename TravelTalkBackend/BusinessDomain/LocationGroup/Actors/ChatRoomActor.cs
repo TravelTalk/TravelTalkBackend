@@ -1,8 +1,8 @@
-﻿namespace BusinessDomain.Region.Actors {
+﻿namespace BusinessDomain.LocationGroup.Actors {
     using DomainUtilities;
     using States;
 
-    internal sealed class RegionActor : AbstractEntityActor<RegionState> {
+    internal sealed class ChatRoomActor : AbstractEntityActor<ChatRoomState> {
 
         public override string PersistenceId => $"{Context.Parent.Path.Name}-{Self.Path.Name}";
 

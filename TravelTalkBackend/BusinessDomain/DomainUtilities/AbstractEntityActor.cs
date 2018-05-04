@@ -1,5 +1,6 @@
 ﻿namespace BusinessDomain.DomainUtilities {
     using System;
+    using ActorUtilityTravelTalk.ActorUtility.AtLeastOneDelivery;
     using Akka.Actor;
     using Akka.Persistence;
     using Feitzinger.TyrolSky.Utility.AkkaUtilities.AtLeastOneDelivery;
@@ -10,7 +11,8 @@
     ///     Base class used by all aggregate root types of actors.
     /// </summary>
     /// <typeparam name="TState"></typeparam>
-    public abstract class AbstractEntityActor<TState> : AtLeastOnceDeliveryReceiveActor, IDeliverLeastOnce where TState : IActorState {
+    public abstract class AbstractEntityActor<TState> : AtLeastOnceDeliveryReceiveActor, IDeliverLeastOnce 
+            where TState : IActorState {
 
         private int eventCount = 0;
 
@@ -18,10 +20,12 @@
             InternalState = new IncludingAtLeastOnceDeliverySnapshot<TState>();
 
             Recover<SnapshotOffer>(offer => {
-                if (offer.Snapshot is IncludingAtLeastOnceDeliverySnapshot<TState> state) {
-                    SetDeliverySnapshot(state.AtLeastOnceDeliverySnapshot);
-                    InternalState = state;
+                if (!(offer.Snapshot is IncludingAtLeastOnceDeliverySnapshot<TState> state)) {
+                    return;
                 }
+
+                SetDeliverySnapshot(state.AtLeastOnceDeliverySnapshot);
+                InternalState = state;
             });
             Recover<IDomainEvent>(recoveredEvent => UpdateState(recoveredEvent));
 
@@ -81,6 +85,7 @@
         }
 
         private class IncludingAtLeastOnceDeliverySnapshot<TState> where TState : IActorState {
+            
             public TState ActorState { get; set; }
 
             public AtLeastOnceDeliverySnapshot AtLeastOnceDeliverySnapshot { get; set; }
