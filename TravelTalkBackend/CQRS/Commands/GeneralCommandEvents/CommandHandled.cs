@@ -12,6 +12,14 @@
             CommandProcessingMessage = commandProcessingMessage;
         }
 
+        public TCommand Command { get; }
+
+        public TCommandResult Result { get; }
+
+        public string CommandProcessingMessage { get; }
+
+        public CommandResultStatus ResultStatus { get; }
+
         public static CommandHandled<TCommand, TCommandResult> CreateSuccessfulResult(TCommand query, TCommandResult result) {
             return new CommandHandled<TCommand, TCommandResult>(query, result, CommandResultStatus.SUCCESSFUL, "Command was successful handled");
         }
@@ -29,13 +37,5 @@
                                                                                         string unsuccessfulMessage) {
             return new CommandHandled<TCommand, TCommandResult>(command, default(TCommandResult), resultStatus, unsuccessfulMessage);
         }
-        
-        public TCommand Command { get; }
-
-        public TCommandResult Result { get; }
-
-        public string CommandProcessingMessage { get; }
-
-        public CommandResultStatus ResultStatus { get; }
     }
 }

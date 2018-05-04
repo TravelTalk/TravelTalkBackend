@@ -7,7 +7,7 @@
     using Microsoft.AspNetCore.Mvc;
 
     public abstract class AbstractApiController : Controller {
-        
+
         public AbstractApiController(ActorSystem actorSystem) {
             ActorSystem = actorSystem;
         }
@@ -22,4 +22,3 @@
         }
     }
 }
-    

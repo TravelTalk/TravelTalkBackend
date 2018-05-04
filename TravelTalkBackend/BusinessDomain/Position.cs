@@ -1,5 +1,5 @@
 ﻿namespace BusinessDomain {
-    
+
     public sealed class Position {
 
         public Position(double longitute, double latitude) {

@@ -1,4 +1,4 @@
-﻿namespace Feitzinger.TyrolSky.Utility.AkkaUtilities.AtLeastOneDelivery {
+﻿namespace ActorUtilityTravelTalk.ActorUtility.AtLeastOneDelivery {
     using Akka.Actor;
 
     public class GuaranteedMessage {

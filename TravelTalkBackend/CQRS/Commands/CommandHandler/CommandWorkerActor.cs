@@ -6,7 +6,7 @@
     internal sealed class CommandWorkerActor<TCommand, TCommandResult> : ReceiveActor
             where TCommand : ICommand
             where TCommandResult : ICommandResult {
-        
+
         private TCommand command;
         private IActorRef commandSender;
 

@@ -1,6 +1,6 @@
 ﻿namespace BusinessDomain.DomainUtilities.Shard {
-    using Feitzinger.TyrolSky.Utility.AkkaUtilities.AtLeastOneDelivery;
-    using Feitzinger.TyrolSky.Utility.AkkaUtilities.Sharding;
+    using ActorUtilityTravelTalk.ActorUtility.AtLeastOneDelivery;
+    using ActorUtilityTravelTalk.ActorUtility.Sharding;
 
     public class ShardEnvelop<TMessage> : IShardEnvelop {
 

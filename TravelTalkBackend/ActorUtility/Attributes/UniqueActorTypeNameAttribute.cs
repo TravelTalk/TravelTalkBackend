@@ -1,4 +1,4 @@
-﻿namespace Feitzinger.TyrolSky.Utility.AkkaUtilities.Attributes {
+﻿namespace ActorUtilityTravelTalk.ActorUtility.Attributes {
     using System;
 
     [AttributeUsage(AttributeTargets.Class)]

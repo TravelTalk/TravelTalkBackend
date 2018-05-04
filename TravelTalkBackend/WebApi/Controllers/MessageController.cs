@@ -12,7 +12,7 @@
 
         [HttpGet]
         public IActionResult GetMessages(GetMessagesQuery query) {
-            
+
             return Ok(new GetMessagesResult {
                     Messages = new List<MessageRemoteDto>(),
                     UserCount = 10

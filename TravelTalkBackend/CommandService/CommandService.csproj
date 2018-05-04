@@ -14,6 +14,10 @@
     <PackageReference Include="Serilog.Sinks.ColoredConsole" Version="3.0.1" />
   </ItemGroup>
   <ItemGroup>
+      <ProjectReference Include="..\BusinessDomain\BusinessDomain.csproj">
+          <Project>{B19B74F2-15C9-45CF-903E-F5758A2C3A3C}</Project>
+          <Name>BusinessDomain</Name>
+      </ProjectReference>
     <ProjectReference Include="..\ConstantContent\ConstantContent.csproj" />
     <ProjectReference Include="..\CQRS\Commands\Commands.csproj">
       <Project>{601243B2-2154-4B9D-B68E-BE97279448B6}</Project>

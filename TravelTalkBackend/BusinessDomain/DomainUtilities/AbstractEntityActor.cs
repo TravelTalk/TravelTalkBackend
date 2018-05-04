@@ -1,17 +1,16 @@
 ﻿namespace BusinessDomain.DomainUtilities {
     using System;
     using ActorUtilityTravelTalk.ActorUtility.AtLeastOneDelivery;
+    using ActorUtilityTravelTalk.ActorUtility.Sharding;
     using Akka.Actor;
     using Akka.Persistence;
-    using Feitzinger.TyrolSky.Utility.AkkaUtilities.AtLeastOneDelivery;
-    using Feitzinger.TyrolSky.Utility.AkkaUtilities.Sharding;
     using Shard;
 
     /// <summary>
     ///     Base class used by all aggregate root types of actors.
     /// </summary>
     /// <typeparam name="TState"></typeparam>
-    public abstract class AbstractEntityActor<TState> : AtLeastOnceDeliveryReceiveActor, IDeliverLeastOnce 
+    public abstract class AbstractEntityActor<TState> : AtLeastOnceDeliveryReceiveActor, IDeliverLeastOnce
             where TState : IActorState {
 
         private int eventCount = 0;
@@ -85,7 +84,7 @@
         }
 
         private class IncludingAtLeastOnceDeliverySnapshot<TState> where TState : IActorState {
-            
+
             public TState ActorState { get; set; }
 
             public AtLeastOnceDeliverySnapshot AtLeastOnceDeliverySnapshot { get; set; }
