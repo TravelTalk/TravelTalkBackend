@@ -4,11 +4,10 @@
      using System.Linq;
      using Akka.Actor;
      using Akka.Configuration;
-     using ConstantContent;
-     using Feitzinger.TyrolSky.Utility.InitializationHelper.Logging;
+     using TravelTalk.ConstantContent;
 
      /// <summary>
-     ///     Launcher for the Lighthouse <see cref="ActorSystem"/>
+     ///     Launcher for the Lighthouse <see cref="ActorSystem"/> 
      /// </summary>
      public static class LighthouseHostFactory {
          public static ActorSystem LaunchLighthouse() {
