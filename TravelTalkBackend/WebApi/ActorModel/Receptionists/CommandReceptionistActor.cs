@@ -1,4 +1,4 @@
-﻿namespace WebApi.ActorModel.Receptionists {
+﻿namespace TravelTalk.WebApi.ActorModel.Receptionists {
     using System;
     using Akka.Actor;
     using Commands.GeneralCommandEvents;

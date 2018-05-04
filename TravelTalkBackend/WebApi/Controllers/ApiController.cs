@@ -1,4 +1,4 @@
-﻿namespace WebApi.Controllers {
+﻿namespace TravelTalk.WebApi.Controllers {
     using System.Threading.Tasks;
     using ActorModel.Receptionists;
     using Akka.Actor;

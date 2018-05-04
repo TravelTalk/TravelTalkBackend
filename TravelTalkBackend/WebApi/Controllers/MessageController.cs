@@ -1,23 +1,22 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-
-namespace WebApi.Controllers {
+﻿namespace TravelTalk.WebApi.Controllers {
     using System.Collections.Generic;
     using Akka.Actor;
-    using Model;
+    using Microsoft.AspNetCore.Mvc;
     using Model.Message;
 
     public class MessageController : ApiBaseController {
+
+        public MessageController(ActorSystem actorSystem) : base(actorSystem) { }
+
         // GET
-        
+
         [HttpGet]
         public IActionResult GetMessages(GetMessagesQuery query) {
+            
             return Ok(new GetMessagesResult {
                     Messages = new List<MessageRemoteDto>(),
                     UserCount = 10
             });
         }
-
-        public MessageController(ActorSystem actorSystem) : base(actorSystem) { }
     }
 }
