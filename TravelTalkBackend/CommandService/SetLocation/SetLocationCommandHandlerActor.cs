@@ -9,7 +9,7 @@
         }
 
         private void HandleSetLocation(SetLocationCommand command) {
-            Context.GetLogger().Info(command);
+            // Context.GetLogger().Info(command);
         }
     }
 }
