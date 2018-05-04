@@ -1,11 +1,10 @@
-﻿ namespace Lighthouse {
+﻿ namespace TravelTalk.Lighthouse {
      using System.Collections.Generic;
      using System.IO;
      using System.Linq;
      using Akka.Actor;
      using Akka.Configuration;
      using ConstantContent;
-     using Feitzinger.TyrolSky.Utility.InitializationHelper.Logging;
 
      /// <summary>
      ///     Launcher for the Lighthouse <see cref="ActorSystem"/>

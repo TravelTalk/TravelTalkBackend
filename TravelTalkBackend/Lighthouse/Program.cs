@@ -1,4 +1,4 @@
-﻿namespace Lighthouse {
+﻿namespace TravelTalk.Lighthouse {
     using System;
 
     public class Program {

@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActorUtility", "ActorUtilit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lighthouse", "Lighthouse\Lighthouse.csproj", "{D4F1BA06-C3E6-484F-8C45-F140CD4D745F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessDomain", "BusinessDomain\BusinessDomain.csproj", "{B19B74F2-15C9-45CF-903E-F5758A2C3A3C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{D4F1BA06-C3E6-484F-8C45-F140CD4D745F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4F1BA06-C3E6-484F-8C45-F140CD4D745F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4F1BA06-C3E6-484F-8C45-F140CD4D745F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B19B74F2-15C9-45CF-903E-F5758A2C3A3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B19B74F2-15C9-45CF-903E-F5758A2C3A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B19B74F2-15C9-45CF-903E-F5758A2C3A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B19B74F2-15C9-45CF-903E-F5758A2C3A3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{601243B2-2154-4B9D-B68E-BE97279448B6} = {631F601B-DE72-4189-83F1-B0DE72834F48}
