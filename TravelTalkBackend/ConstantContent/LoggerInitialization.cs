@@ -3,6 +3,7 @@
     using Serilog.Core;
 
     public class LoggerInitialization {
+        
         public static Logger InitLogger() {
             Logger logger = new LoggerConfiguration()
                     .MinimumLevel.Information()
