@@ -3,10 +3,11 @@
 
 namespace WebApi.Controllers {
     using System.Collections.Generic;
+    using Akka.Actor;
     using Model;
     using Model.Message;
 
-    public class MessageController : Controller {
+    public class MessageController : ApiBaseController {
         // GET
         
         [HttpGet]
@@ -16,5 +17,7 @@ namespace WebApi.Controllers {
                     UserCount = 10
             });
         }
+
+        public MessageController(ActorSystem actorSystem) : base(actorSystem) { }
     }
 }
