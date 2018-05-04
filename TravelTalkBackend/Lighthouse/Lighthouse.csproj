@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp2.0</TargetFramework>
+    </PropertyGroup>
+    <ItemGroup>
+        <None Remove="lighthouse.hocon"/>
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="lighthouse.hocon">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Akka" Version="1.3.6"/>
+        <PackageReference Include="Akka.Cluster" Version="1.3.6"/>
+        <PackageReference Include="Akka.Logger.Serilog" Version="1.3.6"/>
+        <PackageReference Include="Akka.Serialization.Hyperion" Version="1.3.6-beta62"/>
+        <PackageReference Include="Enumeration.dll" Version="2.0.3"/>
+        <PackageReference Include="Petabridge.Cmd.Cluster" Version="0.3.3"/>
+        <PackageReference Include="Petabridge.Cmd.Host" Version="0.3.3"/>
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\ConstantContent\ConstantContent.csproj"/>
+    </ItemGroup>
+</Project>
