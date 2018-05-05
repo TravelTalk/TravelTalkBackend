@@ -1,7 +1,7 @@
 ﻿namespace ActorUtilityTravelTalk.ActorUtility.AtLeastOneDelivery {
     using Akka.Actor;
 
-    public interface IDeliverLeastOnce {
+    public interface IDeliverAtLeastOnce {
 
         void DeliverAtOnce(object message, IActorRef target);
     }

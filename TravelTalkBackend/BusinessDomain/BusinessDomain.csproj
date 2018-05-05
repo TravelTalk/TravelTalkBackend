@@ -10,8 +10,6 @@
   <ItemGroup>
     <Folder Include="LocationGroup\Commands" />
     <Folder Include="LocationGroup\Events" />
-    <Folder Include="Region\Commands" />
-    <Folder Include="Region\Events" />
     <Folder Include="User\Commands" />
     <Folder Include="User\Events" />
   </ItemGroup>

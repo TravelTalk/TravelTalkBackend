@@ -7,9 +7,9 @@
     public static class ShardRegionInitializer {
 
         public static void Initialize(ActorSystem system) {
-//            LocationGroupActor.StartShardRegion(system);
-//            RegionActor.StartShardRegion(system);
-//            UserActor.StartShardRegion(system);
+            //            LocationGroupActor.StartShardRegion(system);
+            RegionActor.StartShardRegion(system);
+            //            UserActor.StartShardRegion(system);
         }
     }
 }

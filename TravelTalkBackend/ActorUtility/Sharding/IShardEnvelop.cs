@@ -1,6 +1,7 @@
 ﻿namespace ActorUtilityTravelTalk.ActorUtility.Sharding {
-    public interface
-            IShardEnvelop {
+    
+    public interface IShardEnvelop {
+        
         string EntityId { get; }
 
         object Message { get; }

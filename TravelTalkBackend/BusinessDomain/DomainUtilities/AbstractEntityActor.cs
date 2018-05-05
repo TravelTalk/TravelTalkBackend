@@ -10,7 +10,7 @@
     ///     Base class used by all aggregate root types of actors.
     /// </summary>
     /// <typeparam name="TState"></typeparam>
-    public abstract class AbstractEntityActor<TState> : AtLeastOnceDeliveryReceiveActor, IDeliverLeastOnce
+    public abstract class AbstractEntityActor<TState> : AtLeastOnceDeliveryReceiveActor, IDeliverAtLeastOnce
             where TState : IActorState {
 
         private int eventCount = 0;
