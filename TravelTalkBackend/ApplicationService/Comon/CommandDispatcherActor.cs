@@ -1,11 +1,11 @@
 ﻿namespace TravelTalk.ApplicationService.Comon {
     using Akka.Actor;
     using Commands.CommandHandler;
-    using Tracking.Commands;
+    using Tracking.Commands.SetLocation;
 
-    public sealed class CommandHandlerActor : ReceiveActor {
+    public sealed class CommandDispatcherActor : ReceiveActor {
 
-        public CommandHandlerActor() {
+        public CommandDispatcherActor() {
             Receive<SetLocationCommand>(c => ForwardCommandToWorker<SetLocationCommand, VoidResult>(Props.Create<SetLocationHandlerActor>(), c));
         }
 

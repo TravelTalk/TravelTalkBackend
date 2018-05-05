@@ -21,24 +21,24 @@ akka {
 		}
 	}
 
-  remote {
-    log-remote-lifecycle-events = DEBUG
-    dot-netty.tcp {
-      transport-class = "Akka.Remote.Transport.DotNetty.TcpTransport, Akka.Remote"
-      applied-adapters = []
-      transport-protocol = tcp
-      hostname = localhost
-      port = 4053
+    remote {
+        log-remote-lifecycle-events = DEBUG
+        dot-netty.tcp {
+            transport-class = "Akka.Remote.Transport.DotNetty.TcpTransport, Akka.Remote"
+            applied-adapters = []
+            transport-protocol = tcp
+            hostname = localhost
+            port = 4053
+        }
+    }            
+
+    cluster {
+        #will inject this node as a self-seed node at run-time
+        seed-nodes = [] 
+        roles = [lighthouse]
+	    auto-down-unreachable-after  = 5s #only during debuging!
     }
-  }            
 
-  cluster {
-    #will inject this node as a self-seed node at run-time
-    seed-nodes = [] 
-    roles = [lighthouse]
-	auto-down-unreachable-after  = 5s #only during debuging!
-  }
-
- loglevel=DEBUG,   
- loggers=["Akka.Logger.Serilog.SerilogLogger, Akka.Logger.Serilog"] 
+    loglevel=DEBUG,   
+    loggers=["Akka.Logger.Serilog.SerilogLogger, Akka.Logger.Serilog"] 
 }

@@ -1,9 +1,10 @@
-﻿namespace TravelTalk.CommandService {
+﻿namespace TravelTalk.CommandServiceHost {
     using System.IO;
     using System.Threading.Tasks;
     using Akka.Actor;
     using Akka.Configuration;
     using Akka.Routing;
+    using ApplicationService.Comon;
     using BusinessDomain;
     using Commands.CommandHandler;
     using ConstantContent;
@@ -26,7 +27,7 @@
             actorSystem = LaunchActorSystem();
             ShardRegionInitializer.Initialize(actorSystem);
 
-            actorSystem.ActorOf(Props.Create<CommandHandlerActor>().WithRouter(FromConfig.Instance),
+            actorSystem.ActorOf(Props.Create<CommandDispatcherActor>().WithRouter(FromConfig.Instance),
                     ActorConstants.COMMAND_HANDLER_POOL_ROUTER_NAME);
 
             //todo start root actors

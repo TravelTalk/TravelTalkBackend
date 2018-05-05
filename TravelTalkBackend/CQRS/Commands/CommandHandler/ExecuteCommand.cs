@@ -1,7 +1,7 @@
 ﻿namespace Commands.CommandHandler {
     using Akka.Actor;
 
-    internal sealed class ExecuteCommand<TCommand, TCommandResult> 
+    public sealed class ExecuteCommand<TCommand, TCommandResult> 
             where TCommand : ICommand<TCommandResult> 
             where TCommandResult : ICommandResult {
 

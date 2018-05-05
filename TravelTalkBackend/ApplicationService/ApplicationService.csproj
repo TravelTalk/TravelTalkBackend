@@ -1,16 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
-    <AssemblyName>TravelTalk.ApplicationService</AssemblyName>
-    <RootNamespace>TravelTalk.ApplicationService</RootNamespace>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="Akka" Version="1.3.6" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CQRS\Commands\Commands.csproj">
-      <Project>{601243B2-2154-4B9D-B68E-BE97279448B6}</Project>
-      <Name>Commands</Name>
-    </ProjectReference>
-  </ItemGroup>
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.0</TargetFramework>
+        <AssemblyName>TravelTalk.ApplicationService</AssemblyName>
+        <RootNamespace>TravelTalk.ApplicationService</RootNamespace>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Akka" Version="1.3.6"/>
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\CQRS\Commands\Commands.csproj">
+            <Project>{601243B2-2154-4B9D-B68E-BE97279448B6}</Project>
+            <Name>Commands</Name>
+        </ProjectReference>
+    </ItemGroup>
 </Project>

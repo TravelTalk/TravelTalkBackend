@@ -1,5 +1,11 @@
 ﻿namespace Commands.CommandHandler {
-    public class AbstractCommand {
-        
+    using Newtonsoft.Json;
+
+    public abstract class AbstractCommand<TCommandResult> : ICommand<TCommandResult>
+            where TCommandResult : ICommandResult {
+
+        public override string ToString() {
+            return JsonConvert.SerializeObject(this);
+        }
     }
 }

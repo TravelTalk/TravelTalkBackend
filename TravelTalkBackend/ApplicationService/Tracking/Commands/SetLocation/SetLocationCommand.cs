@@ -1,4 +1,4 @@
-﻿namespace TravelTalk.ApplicationService.Tracking.Commands {
+﻿namespace TravelTalk.ApplicationService.Tracking.Commands.SetLocation {
     using global::Commands.CommandHandler;
 
     public sealed class SetLocationCommand : AbstractCommand<VoidResult> {

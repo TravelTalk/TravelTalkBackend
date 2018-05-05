@@ -1,6 +1,6 @@
-﻿namespace TravelTalk.CommandService {
+﻿namespace TravelTalk.CommandServiceHost {
 
-    public static class ActorConstants {
+    internal static class ActorConstants {
 
         public const string COMMAND_HANDLER_POOL_ROUTER_NAME = "commandHandlers";
     }

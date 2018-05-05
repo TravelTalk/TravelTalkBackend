@@ -1,5 +1,7 @@
 ﻿namespace TravelTalk.WebApi {
-    public class ActorConstants {
+
+    internal static class ActorConstants {
         
+        public const string COMMAND_HANDLER_GROUP_ROUTER_NAME = "commandHandlerRouter";
     }
 }

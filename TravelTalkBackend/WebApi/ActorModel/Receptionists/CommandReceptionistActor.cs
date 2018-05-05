@@ -20,7 +20,7 @@
                 originalSender = Sender;
                 commandHandler.Tell(command);
 
-                SetReceiveTimeout(TimeSpan.FromSeconds(30));
+                SetReceiveTimeout(TimeSpan.FromSeconds(3));
                 
                 Become(() => {
                     Receive<CommandHandled<TCommand, TCommandResult>>(x => {

@@ -3,7 +3,7 @@
     using Akka.Actor;
     using GeneralCommandEvents;
 
-    internal sealed class CommandWorkerActor<TCommand, TCommandResult> : ReceiveActor
+    public sealed class CommandWorkerActor<TCommand, TCommandResult> : ReceiveActor
             where TCommand : ICommand<TCommandResult>
             where TCommandResult : ICommandResult {
 
@@ -11,10 +11,10 @@
         private IActorRef commandSender;
 
         public CommandWorkerActor() {
-            Receive<CommandWorkerJob>(x => {
+            Receive<ExecuteCommand<TCommand, TCommandResult>>(x => {
                 commandSender = Sender;
                 command = x.Command;
-                Context.ActorOf(x.Props).Tell(command);
+                Context.ActorOf(x.ActorProps).Tell(command);
                 SetReceiveTimeout(TimeSpan.FromSeconds(20));
 
                 Become(WaitForAnswer);
@@ -43,16 +43,6 @@
             });
         }
 
-        public class CommandWorkerJob {
-
-            public CommandWorkerJob(Props props, TCommand command) {
-                Props = props;
-                Command = command;
-            }
-
-            public Props Props { get; }
-
-            public TCommand Command { get; }
-        }
     }
+
 }
