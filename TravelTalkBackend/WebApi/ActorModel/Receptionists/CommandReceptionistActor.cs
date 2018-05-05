@@ -7,7 +7,7 @@
     using ConstantContent;
 
     internal sealed class CommandReceptionistActor<TCommand, TCommandResult> : ReceiveActor
-            where TCommand : ICommand
+            where TCommand : ICommand<TCommandResult>
             where TCommandResult : ICommandResult {
 
         private readonly ActorSelection commandHandler;
@@ -21,11 +21,11 @@
                 commandHandler.Tell(command);
 
                 SetReceiveTimeout(TimeSpan.FromSeconds(30));
-
+                
                 Become(() => {
                     Receive<CommandHandled<TCommand, TCommandResult>>(x => {
                         originalSender.Tell(x);
-                        Self.CommitSuicide();
+                        Self.Tell(PoisonPill.Instance);
                     });
                     Receive<ReceiveTimeout>(x => {
                         originalSender.Tell(CommandHandled<TCommand, TCommandResult>.CreateUnsuccessfulResult(command, CommandResultStatus.GENERAL_ERROR));

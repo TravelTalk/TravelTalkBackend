@@ -1,11 +1,11 @@
 ﻿namespace Commands.CommandHandler {
     using GeneralCommandEvents;
 
-    public sealed class EmptyCommandResult : ICommandResult {
+    public sealed class VoidResult : ICommandResult {
 
-        public static readonly EmptyCommandResult SuccessfulInstance = new EmptyCommandResult();
+        public static readonly VoidResult SuccessfulInstance = new VoidResult();
 
-        private EmptyCommandResult() {
+        private VoidResult() {
             CommandStatus = CommandResultStatus.SUCCESSFUL;
         }
 

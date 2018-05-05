@@ -15,7 +15,7 @@
         protected ActorSystem ActorSystem { get; }
 
         protected Task<CommandHandled<TCommand, TCommandResult>> HandleCommand<TCommand, TCommandResult>(TCommand command)
-                where TCommand : ICommand
+                where TCommand : ICommand<TCommandResult>
                 where TCommandResult : ICommandResult {
             IActorRef receptionist = ActorSystem.ActorOf(Props.Create<CommandReceptionistActor<TCommand, TCommandResult>>());
             return receptionist.Ask<CommandHandled<TCommand, TCommandResult>>(command);
