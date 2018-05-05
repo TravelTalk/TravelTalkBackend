@@ -1,5 +1,4 @@
 ﻿namespace TravelTalk.ApplicationService.Tracking.Commands.SetLocation {
-    using ActorUtilityTravelTalk.ActorUtility.Extensions;
     using ActorUtilityTravelTalk.ActorUtility.Sharding;
     using Akka.Actor;
     using Akka.Cluster.Sharding;
@@ -19,7 +18,7 @@
 
         private void HandleSetLocation(SetLocationCommand command) {
             Position p = new Position(command.Longitude, command.Latitude);
-            SetLocationInRegion m = new SetLocationInRegion(MapDistributor.GetAreaOfPosition(p), p, command.UserId);
+            SetLocationInRegion m = new SetLocationInRegion(MapDistributor.GetAreaOfPosition(p), p, command.UserId, 100);
             regionShardRegion.Tell(ShardEnvelop<object>.Create(m.RegionExtend.Id, m));
             
             Context.GetLogger().Info(command.ToString());
