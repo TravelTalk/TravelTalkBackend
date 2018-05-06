@@ -26,6 +26,14 @@
             return new SpatialExtend(TopLeft.Move(-marginInMeters, -marginInMeters), BottomRight.Move(marginInMeters, marginInMeters));
         }
 
+        public SpatialExtend AddPosition(Position position) {
+            return new SpatialExtend(
+                    new Position(position.Longitude < TopLeft.Longitude ? position.Longitude : TopLeft.Longitude,
+                            position.Latitude < TopLeft.Latitude ? position.Latitude : TopLeft.Latitude), 
+                    new Position(position.Longitude > BottomRight.Longitude ? position.Longitude : BottomRight.Longitude,
+                            position.Latitude > TopLeft.Latitude ? position.Latitude : BottomRight.Latitude));
+        }
+        
         public override bool Equals(object obj) {
             if (!(obj is SpatialExtend)) {
                 return false;
