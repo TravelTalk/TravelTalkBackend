@@ -32,4 +32,28 @@ akka {
 
 	loglevel=DEBUG,   
 	loggers=["Akka.Logger.Serilog.SerilogLogger, Akka.Logger.Serilog"] 
+	
+	persistence{
+    		  journal {
+    			plugin = "akka.persistence.journal.sql-server"
+    			sql-server {
+    				class = "Akka.Persistence.SqlServer.Journal.SqlServerJournal, Akka.Persistence.SqlServer"
+    				schema-name = dbo
+    				serializer = hyperion
+    				auto-initialize = on
+    				connection-string = "Server=infra.uh,1433;Database=travelTalkJournal;Integrated Security=False;User Id=sa;Password=Password1234;MultipleActiveResultSets=True"
+    				}
+    		  } 
+    		  snapshot-store {
+    				plugin = "akka.persistence.snapshot-store.sql-server"
+    				sql-server {
+    					class = "Akka.Persistence.SqlServer.Snapshot.SqlServerSnapshotStore, Akka.Persistence.SqlServer"
+    					schema-name = dbo
+    					serializer = hyperion
+    					auto-initialize = on
+    					table-name = SnapshotStore
+    		     		connection-string = "Server=infra.uh,1433;Database=travelTalkSnapshot;Integrated Security=False;User Id=sa;Password=Password1234;MultipleActiveResultSets=True"
+    				}
+    		}
+    	} 
 }
